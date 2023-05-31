@@ -1,7 +1,3 @@
-package com.java.hackerrank.dashboard.basics;
-
-import java.util.Scanner;
-
 /**
  * TASK
  *
@@ -27,6 +23,8 @@ import java.util.Scanner;
  * python         050 
  * ================================
  **/
+
+import java.util.Scanner;
 
 public class OutputFormatting {
 	public static void main(String[] args) {
