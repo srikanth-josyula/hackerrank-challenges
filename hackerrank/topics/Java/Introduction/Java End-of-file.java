@@ -1,7 +1,3 @@
-package com.java.hackerrank.dashboard.basics;
-
-import java.util.Scanner;
-
 /**
  * Input Format
  * 
@@ -14,6 +10,9 @@ import java.util.Scanner;
  * the line content received as input.
  * 
  **/
+	 
+import java.util.Scanner;
+
 public class EndOfLine {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
