@@ -1,7 +1,3 @@
-package com.java.hackerrank.dashboard.basics;
-
-import java.util.Scanner;
-
 /**
  * Static initialization blocks are executed when the class is loaded, and you can initialize static variables in those blocks. 
  * 
@@ -14,6 +10,9 @@ import java.util.Scanner;
  * If both values are greater than zero, then the main method must output the area of the parallelogram. 
  * Otherwise, print "java.lang.Exception: Breadth and height must be positive" without quotes.
  **/
+
+import java.util.Scanner;
+
 public class StaticInitializerBlock {
 	// Code for submission start
 	static Scanner sc = new Scanner(System.in);
