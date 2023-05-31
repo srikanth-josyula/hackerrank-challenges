@@ -1,7 +1,3 @@
-package com.java.hackerrank.dashboard.basics;
-
-import java.util.Scanner;
-
 /**
  * Task
  * 
@@ -13,6 +9,9 @@ import java.util.Scanner;
  * read from stdin. On the third line, print Int: followed by the unaltered
  * integer read from stdin.
  **/
+
+import java.util.Scanner;
+
 public class StdinAndStdout2 {
 
 	public static void main(String[] args) {
