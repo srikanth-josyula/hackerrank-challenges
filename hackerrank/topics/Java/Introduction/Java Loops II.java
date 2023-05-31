@@ -1,7 +1,3 @@
-package com.java.hackerrank.dashboard.basics;
-
-import java.util.Scanner;
-
 /**
  * Task 
  * 
@@ -19,6 +15,9 @@ import java.util.Scanner;
  * OUTPUT:
  * 8 14 26 50 98
  **/
+
+import java.util.Scanner;
+
 public class Loops2 {
 
 	public static void main(String[] argh) {
