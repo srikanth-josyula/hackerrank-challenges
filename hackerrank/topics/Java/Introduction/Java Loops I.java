@@ -1,12 +1,11 @@
-package com.java.hackerrank.dashboard.basics;
-
-import java.util.Scanner;
-
 /**
  * Task Given an integer,N , print its first 10 multiples. Each multiple N*i
  * should be printed on a new line in the form: N x i = result.
  * 
  **/
+
+import java.util.Scanner;
+
 public class Loops1 {
 	
 	public static void main(String[] args) {
