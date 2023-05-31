@@ -1,7 +1,3 @@
-package com.java.hackerrank.dashboard.basics;
-
-import java.util.Scanner;
-
 /**
  * The first line contains an integer,T , denoting the number of test cases.
  * Each test case, T , is comprised of a single line with an integer, n, which
@@ -24,6 +20,9 @@ import java.util.Scanner;
  * 
  * n can't be fitted anywhere.
  **/
+
+import java.util.Scanner;
+
 public class DataTypes {
 	public static void main(String[] argh) {
 
