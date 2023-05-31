@@ -1,8 +1,3 @@
-package com.java.hackerrank.dashboard.basics;
-
-import java.time.LocalDate;
-import java.util.Scanner;
-
 /**
  * You are given a date. You just need to write the method, getDay, which
  * returns the day on that date.
@@ -12,6 +7,10 @@ import java.util.Scanner;
  * Output WEDNESDAY
  * 
  **/
+import java.time.LocalDate;
+import java.util.Scanner;
+
+
 public class DateandTime {
 
 	public static void main(String[] args) {
