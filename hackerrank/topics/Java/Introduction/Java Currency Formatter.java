@@ -1,15 +1,13 @@
-package com.java.hackerrank.dashboard.basics;
-
-import java.text.NumberFormat;
-import java.util.Locale;
-import java.util.Scanner;
-
 /**
  * INPUT: A single double-precision number denoting
  * 
  * OUTPUT US: formattedPayment India: formattedPayment China: formattedPayment
  * France: formattedPayment
  **/
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.util.Scanner;
+
 public class CurrencyFormatter {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
