@@ -1,7 +1,10 @@
 package com.sample;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Solution {
 
@@ -13,25 +16,27 @@ public class Solution {
 	}
 
 	public static String reverseVowels(String s) {
-		StringBuilder sb = new StringBuilder(s);
-		int l = 0;
-		int r = s.length() - 1;
+		
+        char[] chars = s.toCharArray();
+        Set<Character> vowels = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'));
 
-		while (l < r) {
-			while (l < r && !isVowel(sb.charAt(l)))
-				++l;
-			while (l < r && !isVowel(sb.charAt(r)))
-				--r;
-			sb.setCharAt(l, s.charAt(r));
-			sb.setCharAt(r, s.charAt(l));
-			++l;
-			--r;
-		}
+        // Collect all vowels in a list
+        List<Character> vowelList = new ArrayList<>();
+        for (char c : chars) {
+            if (vowels.contains(c)) {
+                vowelList.add(c);
+            }
+        }
+       
 
-		return sb.toString();
-	}
+        // Replace vowels with swapped vowels from the list
+        int index = vowelList.size()-1;
+        for (int i = 0; i < chars.length; i++) {
+            if (vowels.contains(chars[i])) {
+                chars[i] = vowelList.get(index--);
+            }
+        }
 
-	private static boolean isVowel(char c) {
-		return Arrays.asList('A','E','I','O','U','a','e','i','o','u').contains(c);
+        return new String(chars);
 	}
 }
