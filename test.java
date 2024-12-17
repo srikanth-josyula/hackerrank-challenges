@@ -1,5 +1,6 @@
 package com.example.proxy;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -14,15 +15,24 @@ import java.util.Enumeration;
 @RestController
 public class ProxyController {
 
-    private static final String TARGET_URL = "http://localhost:8080";  // URL of the backend (Alfresco)
+    @Value("${proxy.target.url}")
+    private String targetUrl;  // Target URL to forward requests to (e.g., http://localhost:8080)
 
     private final RestTemplate restTemplate = new RestTemplate();
 
     // This method catches all HTTP requests made to localhost:8888
     @RequestMapping("/**")
     public void proxyRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        // Extract the scheme (http/https), host (localhost), and port (8888) from the incoming request
+        String scheme = request.getScheme();  // http or https
+        String host = request.getServerName();  // e.g., localhost
+        int port = request.getServerPort();  // e.g., 8888 (or default 80 for HTTP)
+
+        // Construct the source base URL (e.g., http://localhost:8888)
+        String sourceUrl = scheme + "://" + host + ":" + port;
+
         // Construct the target URL by appending the request URI to the base URL
-        String forwardUrl = TARGET_URL + request.getRequestURI();
+        String forwardUrl = targetUrl + request.getRequestURI();
 
         // Build the URI to forward to
         URI uri = UriComponentsBuilder.fromHttpUrl(forwardUrl)
@@ -41,10 +51,10 @@ public class ProxyController {
         byte[] responseBody = restResponse.getBody();
         String modifiedBody = new String(responseBody);
 
-        // If the response content is HTML, modify the URLs (replace localhost:8888 with localhost:8080)
+        // If the response content is HTML, modify the URLs (replace the dynamic source URL with the target URL)
         if (restResponse.getHeaders().getContentType() != null &&
                 restResponse.getHeaders().getContentType().includes(MediaType.TEXT_HTML)) {
-            modifiedBody = modifiedBody.replace("http://localhost:8888", "http://localhost:8080");
+            modifiedBody = modifiedBody.replace(sourceUrl, targetUrl);
             responseBody = modifiedBody.getBytes();  // Set the modified body
         }
 
