@@ -26,7 +26,7 @@ public class Solution {
 			//if (n > highestAltitude) {
 			//	highestAltitude = n;
 			//}
-			max = Math.max(max, altitude);
+			highestAltitude = Math.max(highestAltitude, n);
 		}
 		// System.out.println(highestAltitude);
 		return highestAltitude;
