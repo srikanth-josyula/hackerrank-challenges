@@ -23,9 +23,10 @@ public class Solution {
 			// System.out.println(n + gain[i]);
 			n = n + gain[i];
 
-			if (n > highestAltitude) {
-				highestAltitude = n;
-			}
+			//if (n > highestAltitude) {
+			//	highestAltitude = n;
+			//}
+			max = Math.max(max, altitude);
 		}
 		// System.out.println(highestAltitude);
 		return highestAltitude;
