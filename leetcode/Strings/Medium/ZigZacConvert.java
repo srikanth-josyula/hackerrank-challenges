@@ -18,7 +18,7 @@ public class Solution {
 	
 		//For i = 0 => j = 0, 4, 8, 12             => Incrementing by 4  => j + ((2*numRows)-2) * i
 		//For i = 1 => j = 1, 3, 5,  7, 09, 11, 13 => Incrementing by 2  => j + ((2*numRows)-2) * i
-		//For i = 2 => j = 2, 6, 10 			         => Incrementing by 4  => j + ((2*numRows)-2) * i
+		//For i = 2 => j = 2, 6, 10 	           => Incrementing by 4  => j + ((2*numRows)-2) * i
 		
 		if (s == null || s.isEmpty() || numRows <= 0) {
             return "";
