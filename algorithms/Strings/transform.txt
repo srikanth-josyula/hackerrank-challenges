@@ -1,4 +1,14 @@
+“String Reversal”: Reverse a string using iterative or recursive methods ?
+How would I reverse the order of letters in the word "hello" to make it "olleh". Start from both ends of the string.
 
-Hello World!
+“Anagram Detection”: Check if two strings are anagrams (e.g., "listen" and "silent").
+Two words are anagrams if they contain the same characters with the same frequency, just arranged differently.
 
+“Longest Common Substring”: Find the longest substring that two strings share (e.g., "abcde" and "abfde" → "ab").
+A substring is a contiguous block of characters. Find the biggest block present in both strings.
 
+“Longest Common Subsequence”: Identify the longest sequence that appears in both strings (not necessarily contiguous).
+Find the longest sequence that appears in both strings, not necessarily contiguous (e.g., "abcde" and "ace" → "ace"). Unlike a substring, a subsequence allows skipping characters. Find the longest sequence where the order is preserved.
+
+“Edit Distance”: Calculate the minimum number of edits (insertions, deletions, substitutions) to transform one string into another.
+Transform one string into another with the fewest edits (e.g., "kitten" → "sitting" requires 3 edits).
