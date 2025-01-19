@@ -11,6 +11,8 @@ public class TwoSum {
             int sum = nums[left] + nums[right];
             
             if (sum == target) {
+                left++;
+				right--;
                 return new int[]{nums[left], nums[right]};
             } else if (sum < target) {
                 left++; // Move left pointer to increase sum
