@@ -3,6 +3,9 @@ import java.util.Arrays;
 public class TwoSum {
     public static int[] findTwoSum(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
+
+        //Make sure we need to sort the array
+        Arrays.sort(nums);
         
         while (left < right) {
             int sum = nums[left] + nums[right];
