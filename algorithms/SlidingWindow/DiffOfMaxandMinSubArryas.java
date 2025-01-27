@@ -24,8 +24,8 @@ public class Solution {
 			return -1;
 		}
 
-		float maxSum = 0;
-		float minSum = 0;
+		float maxSum = Integer.MIN_VALUE;
+		float minSum = Integer.MAX_VALUE;
 
 		int windowSum = 0;
 		int start = 0;
@@ -33,11 +33,7 @@ public class Solution {
 		for (int i = 0; i < n; i++) {
 			windowSum += arr[i];
 
-			if (i == (k - 1) && start == 0) {
-				minSum = windowSum;
-				windowSum -= arr[start];
-				start++;
-			} else if (i > (k - 1) && (i - start + 1) == k) {
+			if ((i - start + 1) == k) {
 				maxSum = Math.max(maxSum, windowSum);
 				minSum = Math.min(minSum, windowSum);
 				windowSum -= arr[start];
